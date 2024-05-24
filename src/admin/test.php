@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Affichage du rôle de l'utilisateur</title>
 </head>
@@ -26,19 +26,19 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $serveur = "127.0.0.1";
-        $base_de_donnees = "gestion_stages";
+        $base_de_donnees = "stages";
         $utilisateur = "root";
         $mot_de_passe = "root";
 
         try {
-            $dbh = new PDO("mysql:host=$serveur;dbname=$base_de_donnees", $utilisateur, $mot_de_passe);
+            $dbh = new PDO("mysql:host=$serveur;dbname=$base_de_donnees;charset=utf8", $utilisateur, $mot_de_passe);
             $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // Récupère l'adresse e-mail saisie dans le formulaire
             $mail = $_POST['email'];
 
             // Préparation de la requête pour récupérer le rôle de l'utilisateur
-            $requete = $dbh->prepare("SELECT roles_p FROM tbl_personne WHERE mail_p = :mail");
+            $requete = $dbh->prepare("SELECT roles_p FROM eleve WHERE mail_eleve = :mail");
 
             // Liaison des paramètres
             $requete->bindParam(':mail', $mail);
@@ -58,7 +58,9 @@
                         break;
                     case 2:
                         $role = "Tuteur ou Professeur";
-                        break;
+                        // Redirection si le rôle est égal à 2
+                        header("Location: _prof_index.php");
+                        exit; 
                     case 3:
                         $role = "Admin";
                         break;
@@ -70,7 +72,7 @@
                         break;
                 }
                 echo "<p>Votre rôle : " . $role . "</p>";
-
+            
                 // Redirection en fonction du rôle
                 if ($resultat['roles_p'] > 2) {
                     header("Location: _admin_index.php");

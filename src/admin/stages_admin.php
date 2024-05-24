@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <?php
 session_start();
 ?>
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -81,7 +81,7 @@ session_start();
             $base_de_donnees = "gestion_stages";
 
             try {
-                $dbh = new PDO("mysql:host=$serveur;dbname=$base_de_donnees", $utilisateur, $mot_de_passe);
+                $dbh = new PDO("mysql:host=$serveur;dbname=$base_de_donnees;charset=utf8", $utilisateur, $mot_de_passe);
                 $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
                 $stmt = $dbh->prepare("SELECT id_e, nom_e, rue_e, CP_e, ville_e, date_debut_s, date_fin_s, duree_s FROM tbl_company");

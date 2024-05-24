@@ -11,7 +11,7 @@ if (isset($_GET['id_e']) && !empty($_GET['id_e'])) {
 
     try {
         // Connexion à la base de données
-        $dbh = new PDO("mysql:host=$serveur;dbname=$base_de_donnees", $utilisateur, $mot_de_passe);
+        $dbh = new PDO("mysql:host=$serveur;dbname=$base_de_donnees;charset=utf8", $utilisateur, $mot_de_passe);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Requête pour obtenir les données de la ligne à modifier
@@ -26,7 +26,7 @@ if (isset($_GET['id_e']) && !empty($_GET['id_e'])) {
             <!DOCTYPE html>
             <html lang="fr">
             <head>
-                <meta charset="UTF-8">
+                <meta charset="utf-8">
                 <title>Modifier une ligne</title>
                 <link href="../css/bootstrap.min.css" rel="stylesheet">
                 <link href="../css/style.css" rel="stylesheet">

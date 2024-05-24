@@ -9,12 +9,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Connexion à la base de données (à adapter selon votre configuration)
     $serveur = "127.0.0.1";
-    $base_de_donnees = "gestion_stages";
+    $base_de_donnees = "stages";
     $utilisateur = "root";
     $mot_de_passe = "root";
 
     try {
-        $dbh = new PDO("mysql:host=$serveur;dbname=$base_de_donnees", $utilisateur, $mot_de_passe);
+        $dbh = new PDO("mysql:host=$serveur;dbname=$base_de_donnees;charset=utf8", $utilisateur, $mot_de_passe);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Prépare et exécute la requête SQL pour mettre à jour le rôle de l'utilisateur

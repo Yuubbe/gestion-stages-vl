@@ -15,7 +15,7 @@ session_start();
  
 </style>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -24,7 +24,7 @@ session_start();
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <link rel="shortcut icon" href="./img/" type="image/x-icon">
-    <title>Admin - Gestion Stage</title>
+    <title>professeur - Gestion Stage</title>
 </head>
 
 <body>
@@ -41,10 +41,11 @@ session_start();
 
             <div class="collapse navbar-collapse" id="mainmenu">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a href="" class="nav-link">Accueil</a></li>
-                    <li class="nav-item"><a href="stages_admin.php" class="nav-link">Stages</a></li>
-                    <li class="nav-item"><a href="manage_user.php" class="nav-link">Gestion des utilisateurs</a></li>
-                    <li class="nav-item"><a href="conventions.html" class="nav-link">Conventions</a></li>
+                    <li class="nav-item"><a href="/./index.php" class="nav-link">Accueil</a></li>
+                    <li class="nav-item"><a href="/prof/validation_entreprises.php" class="nav-link">demande de validation d'entreprises</a></li>
+                    <li class="nav-item"><a href="/prof/validation_stages.php" class="nav-link">demande de validation de stages</a></li>
+                    <li class="nav-item"><a href="/prof/stages_prof.php" class="nav-link">stages</a></li>
+                    <li class="nav-item"><a href="/prof/entreprise_prof.php" class="nav-link">entreprises</a></li>
                 </ul><br>
                 <?php
                 if (isset($_SESSION['utilisateur_connecte']) && $_SESSION['utilisateur_connecte'] === true) {
@@ -67,7 +68,7 @@ session_start();
             <div class="d-flex">
                 <div>
                 <form class="test1"> 
-                    <h1><span class="text-info">Admin</span> Stages</h1>
+                    <h1><span class="text-info">professeur</span> Stages</h1>
                     <p >Créer par deux étudiants de la Filière SIO à Notre-Dame-La-Providence sur Avranches. Gestion Stages, vous permettra de simplifier les relations entre établissements, entreprises et étudiants.
                     </p>
                     <a class="btn btn-info" href="https://www.ecoledirecte.com/login?cameFrom=%2FAccueil" target="_blank">Ecole Directe</a>

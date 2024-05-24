@@ -3,6 +3,8 @@
 <?php
 session_start();
 ?>
+
+
 <style>
 .test{
     margin-left:0px;
@@ -22,7 +24,7 @@ session_start();
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <link rel="shortcut icon" href="./img/" type="image/x-icon">
-    <title>Accueil - Gestion Stage</title>
+    <title>Admin - Gestion Stage</title>
 </head>
 
 <body>
@@ -31,7 +33,7 @@ session_start();
 
     <div class="navbar navbar-expand-md bg-dark navbar-dark">
         <div class="container">
-            <a href="" class="navbar-brand text-info">Gestion Stage
+            <a href="index.php" class="navbar-brand text-info">Gestion Stage
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainmenu"><span
@@ -40,10 +42,9 @@ session_start();
             <div class="collapse navbar-collapse" id="mainmenu">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a href="" class="nav-link">Accueil</a></li>
-                    <li class="nav-item"><a href="/etudiant/entreprise.php" class="nav-link">entreprise</a></li>
-                    <li class="nav-item"><a href="/etudiant/stages.php" class="nav-link">stages</a></li>
-                    <li class="nav-item"><a href="/etudiant/rapport.html" class="nav-link">Rédiger</a></li>
-                    <li class="nav-item"><a href="/etudiant/conventions.html" class="nav-link">Conventions</a></li>
+                    <li class="nav-item"><a href="stages_admin.php" class="nav-link">Stages</a></li>
+                    <li class="nav-item"><a href="manage_user.php" class="nav-link">Gestion des utilisateurs</a></li>
+                    <li class="nav-item"><a href="conventions.html" class="nav-link">Conventions</a></li>
                 </ul><br>
                 <?php
                 if (isset($_SESSION['utilisateur_connecte']) && $_SESSION['utilisateur_connecte'] === true) {
@@ -66,7 +67,7 @@ session_start();
             <div class="d-flex">
                 <div>
                 <form class="test1"> 
-                    <h1><span class="text-info">Gestion</span> Stages</h1>
+                    <h1><span class="text-info">Admin</span> Stages</h1>
                     <p >Créer par deux étudiants de la Filière SIO à Notre-Dame-La-Providence sur Avranches. Gestion Stages, vous permettra de simplifier les relations entre établissements, entreprises et étudiants.
                     </p>
                     <a class="btn btn-info" href="https://www.ecoledirecte.com/login?cameFrom=%2FAccueil" target="_blank">Ecole Directe</a>
@@ -134,9 +135,9 @@ session_start();
                     <h3>Accès rapide</h3>
                     <ul>
                         <li><a href="./pages/entreprise.html">Entreprises</a></li>
-                        <li><a href="./pages/stages.html">Stages</a></li>
-                        <!--<li><a href="test.php">Rôles</a></li>-->
-                        <li><a href="admin_connexion.php">Admin Mode</a></li>
+                        <li><a href="stages.html">Stages</a></li>
+                        <li><a href="./pages/conventions.html">Conventions</a></li>
+                        <li><a href="index.php">Admin Mode</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-4 col-md-3 item">
